@@ -7,8 +7,8 @@ routes.get("/", (req, res) => {
 });
 
 
-routes.get("/pontos/all", co.findAll);
-routes.post("/pontos/create",co.addPonto);
+routes.get("/api/pontos/todos", co.mostrarTodos);
+routes.post("/api/pontos/criar",co.criarPonto);
 
 
 module.exports = { routes };
