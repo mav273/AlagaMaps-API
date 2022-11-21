@@ -17,6 +17,8 @@ db.sequelize
     console.log("Falha na conexão: " + err.message);
   });
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://phenomenal-unicorn-327244.netlify.app/'
+}));
 app.use(express.json());
 app.use(routes);
