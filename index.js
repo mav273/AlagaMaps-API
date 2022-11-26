@@ -18,7 +18,9 @@ db.sequelize
   });
 
 app.use(cors({
-  origin: 'https://phenomenal-unicorn-327244.netlify.app/'
+  credentials: true,
+  methods: ['GET', 'PUT', 'POST'],
+  allowedHeaders: [ 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization']
 }));
 app.use(express.json());
 app.use(routes);
