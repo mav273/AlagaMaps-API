@@ -24,9 +24,16 @@ exports.mostrarTodos = (req, res) => {
 //     message: e.message || "Ocorreu algum erro ao trazer os dados.",
 //   });
 // }
+async function buscarId(){
+  const id = await sequelize.query(`SELECT id from coordinates order by id desc limit 1`)
+  return id[0][0].id
+}
 
-exports.criarPonto = (req, res) => {
+exports.criarPonto = async (req, res) => {
+  const id = await buscarId()
+
   coordinates.create({
+    id: id + 1,
     type: req.body.type,
     long: req.body.long,
     lat: req.body.lat
