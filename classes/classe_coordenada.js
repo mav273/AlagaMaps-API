@@ -1,12 +1,11 @@
 const {
-  criarPont,
+  criarPontos,
   mostrarPontos,
-  buscarId,
 } = require('../sequelize/controllers/coordinates_controllers');
 
 class Coordenada {
   constructor() {
-    this.id = buscarId();
+    this.type = 'Point';
   }
 
   mostrar = async (req, res) => {
@@ -23,12 +22,11 @@ class Coordenada {
 
   criar = async (req, res) => {
     try {
-      const id = this.id;
-      const tipo = req.body.type;
+      const tipo = this.type;
       const longitude = req.body.long;
       const latitute = req.body.lat;
 
-      const consulta = await criarPont(id + 1, tipo, longitude, latitute);
+      const consulta = await criarPontos(tipo, longitude, latitute);
 
       res.json(consulta);
     } catch (e) {
