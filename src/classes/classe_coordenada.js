@@ -15,7 +15,7 @@ class Coordenada {
     } catch (e) {
       console.error(e);
       res.status(500).send({
-        message: e.message || 'Ocorreu um erro ao criar o ponto.',
+        message: e || 'Ocorreu um erro ao criar o ponto.',
       });
     }
   };
@@ -32,7 +32,7 @@ class Coordenada {
     } catch (e) {
       console.error(e);
       res.status(500).send({
-        message: e.message || 'Ocorreu um erro ao criar o ponto.',
+        message: e || 'Ocorreu um erro ao criar o ponto.',
       });
     }
   };
