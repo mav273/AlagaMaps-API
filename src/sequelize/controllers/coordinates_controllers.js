@@ -15,6 +15,8 @@ exports.mostrarPontos = async () => {
   return consulta[0];
 };
 exports.criarPontos = async (type, long, lat) => {
+  var hoje = new Date()
+  hoje = hoje.getTime() - 60*60*3
   var id = await buscarId();
   if (isNaN(id)) {
     id = 1;
@@ -26,16 +28,9 @@ exports.criarPontos = async (type, long, lat) => {
     type: type,
     long: long,
     lat: lat,
+    user_id: 1,
+    createdAt: hoje,
+    updatedAt: hoje
   });
   return resposta;
 };
-
-// try{
-//   const data = await sequelize.query("select type,string_to_array(concat(long,',',lat),',') as coordinates from coordinates;")
-//   res.send(data[0])
-// }
-// catch(e){
-//   res.status(500).send({
-//     message: e.message || "Ocorreu algum erro ao trazer os dados.",
-//   });
-// }
