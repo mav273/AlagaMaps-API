@@ -1,4 +1,4 @@
-require('dotenv').config({path:__dirname+'/./../../.env'});
+require('dotenv').config({path:__dirname+'/./../../../.env'});
 require('dotenv').config();
 require('pg'); // Para a conexão com o Vercel
 module.exports = {
