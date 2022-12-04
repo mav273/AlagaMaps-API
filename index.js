@@ -3,9 +3,9 @@ require("dotenv").config({ path: path.resolve(__dirname, "/.env") });
 
 const cors = require("cors");
 const express = require("express");
-const { routes } = require("./server/router.js");
+const { routes } = require("./src/server/router.js");
 const app = express();
-const db = require("./sequelize/models");
+const db = require("./src/sequelize/models");
 
 app.listen(3000, () => console.log("Servidor iniciado na porta 3000"));
 db.sequelize
