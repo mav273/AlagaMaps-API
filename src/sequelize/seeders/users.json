@@ -1,0 +1,9 @@
+[
+    {
+        "full_name":"admin",
+        "email":"admin@example.com",
+        "password": "$2a$04$xiIMEdcuqwbtQIv.Eoif2e3UvXP2NdeQ2PuaE6RgGTdY855Ml32i6",
+        "createdAt": "2022-12-04T00:00:00-03:00",
+        "updatedAt": "2022-12-04T00:00:00-03:00"
+    }
+]
