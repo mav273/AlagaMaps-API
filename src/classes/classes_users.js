@@ -38,7 +38,7 @@ class Usuario {
         throw 'Senha incorreta';
       }
 
-      res.status(200).send({ id: user.id });
+      res.status(200).send({ nome: user.full_name, id: user.id });
     } catch (e) {
       console.error(e);
       res.status(500).send({

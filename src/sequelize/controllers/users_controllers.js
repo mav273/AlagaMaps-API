@@ -16,7 +16,7 @@ buscarEmail = async (email) => {
 exports.buscarUsuario = async (email) => {
   try {
     const consulta = await sequelize.query(
-      `select id,email,password from users where email = '${email}';`,
+      `select id,full_name,email,password from users where email = '${email}';`,
     );
     return consulta[0][0];
   } catch (e) {
