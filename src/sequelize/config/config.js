@@ -9,12 +9,6 @@ module.exports = {
         host: process.env.DB_HOST,
         port: process.env.DB_PORT,
         dialect: process.env.DB_DIALECT,
-        dialectOptions: {
-            ssl: {
-            require: true,
-            rejectUnauthorized: false,
-            }, // Para a conexão com o Heroku
-        },
         logging: false,
         omitNull: true
     },
@@ -40,12 +34,6 @@ module.exports = {
         host: process.env.DB_HOST,
         port: process.env.DB_PORT,
         dialect: process.env.DB_DIALECT,
-        dialectOptions: {
-            ssl: {
-            require: true,
-            rejectUnauthorized: false,
-            },
-        },
         logging: false
     }
 };
