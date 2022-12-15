@@ -14,6 +14,13 @@ exports.mostrarPontos = async () => {
   );
   return consulta[0];
 };
+exports.mostrarPontosSeparados = async () => {
+  const consulta = await sequelize.query(
+    "select type,long::float8 as long,lat::float8 as lat from coordinates;",
+  );
+  return consulta[0];
+}
+
 exports.criarPontos = async (type, long, lat) => {
   var hoje = new Date()
   hoje = hoje.getTime() - 60*60*3

@@ -1,6 +1,7 @@
 const {
   criarPontos,
   mostrarPontos,
+  mostrarPontosSeparados,
 } = require('../sequelize/controllers/coordinates_controllers');
 
 class Coordenada {
@@ -11,6 +12,18 @@ class Coordenada {
   mostrar = async (req, res) => {
     try {
       const pontos = await mostrarPontos();
+      res.send(pontos);
+    } catch (e) {
+      console.error(e);
+      res.status(500).send({
+        message: e || 'Ocorreu um erro ao criar o ponto.',
+      });
+    }
+  };
+
+  mostrarSeparados = async (req, res) => {
+    try {
+      const pontos = await mostrarPontosSeparados();
       res.send(pontos);
     } catch (e) {
       console.error(e);

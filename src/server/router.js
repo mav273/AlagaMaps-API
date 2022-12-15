@@ -15,6 +15,7 @@ var coordenada = new Coordenadas();
 var usuario = new Usuario()
 
 routes.get('/api/pontos/todos', coordenada.mostrar);
+routes.get('/api/pontos/todosSeparados', coordenada.mostrarSeparados);
 routes.post('/api/pontos/criar', coordenada.criar);
 routes.post('/api/usuarios/checar', usuario.login);
 routes.post('/api/usuarios/criar', usuario.cadastro   );
